@@ -18,3 +18,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: black;
 }
+
+h1 {
+    margin: 20px;
+}
