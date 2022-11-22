@@ -87,6 +87,11 @@ html {
     flex-direction: column;
   }
 
+  img {
+    width: 200px;
+    height: 200px;
+  }
+
   footer {
     background-color: #EFA48B;
     flex-shrink: 0;
