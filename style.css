@@ -57,7 +57,6 @@ html {
   
   .header h1 {
     display: block;
-    border: 3px dashed;
     border-radius: 0px;
     font-size: 1.5rem;
     padding: 1.25rem;
@@ -65,7 +64,6 @@ html {
   }
   
   .box {
-    border: 2px dashed;
     border-radius: 2px;
     width: fit-content;
     height:fit-content;
@@ -74,14 +72,12 @@ html {
   }
   
   .left_section {
-    border: 2px dashed;
     flex: 0 1 auto;
     margin: 1rem;
     padding: 1.5rem;
   }
   
   .right_section {
-    border: 2px dashed;
     flex: 1 2 auto;
     margin: 1rem;
     padding: 1.5rem;
