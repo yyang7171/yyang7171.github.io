@@ -89,7 +89,6 @@ html {
 
   footer {
     position: fixed;
-    bottom: 0;
     background-color: #EFA48B;
     flex-shrink: 0;
     padding: 1rem;
