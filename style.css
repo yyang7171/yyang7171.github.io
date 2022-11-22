@@ -88,6 +88,8 @@ html {
   }
 
   footer {
+    position: fixed;
+    bottom: 0;
     background-color: #EFA48B;
     flex-shrink: 0;
     padding: 1rem;
@@ -98,10 +100,11 @@ html {
   .footer a {
     color: rgb(255, 230, 138);
     text-decoration: underline;
+    font-size: small;
   }
   
   .footer a:hover {
-    color: rgb(255, 225, 236);
+    color: rgb(243, 221, 221);
     text-decoration: none;
   }
 
