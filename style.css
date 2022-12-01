@@ -77,12 +77,14 @@ html {
     height:fit-content;
     padding: 1.5rem;
     margin: 0 auto;
+    border: dashed;
   }
   
   .left_section {
     flex: 0 1 auto;
     margin: 1rem;
     padding: 1.5rem;
+    border: dashed;
   }
   
   .right_section {
@@ -93,6 +95,7 @@ html {
     justify-content: center;
     display: flex;
     flex-direction: column;
+    border: dashed;
   }
 
   footer {
