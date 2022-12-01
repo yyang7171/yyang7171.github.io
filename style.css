@@ -26,6 +26,14 @@ html {
     text-decoration: none;
   }
   
+  a:link {
+    color: #9DBCE1;
+  }
+
+  a:visited {
+    color: #8283A4;
+  }
+
   h2, h3 {
     margin:0;
     padding:0;
