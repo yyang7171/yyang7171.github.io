@@ -72,6 +72,12 @@ html {
     margin:0;
   }
   
+  .placeholder {
+    margin: 1rem;
+    padding: 1rem;
+    font-size: larger;
+  }
+
   .box {
     border-radius: 2px;
     width: fit-content;
