@@ -118,13 +118,13 @@ html {
   }
   
   .footer a {
-    color: rgb(50, 50, 50);
+    color: rgb(145, 78, 62);
     text-decoration: underline;
     font-size: small;
   }
   
   .footer a:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(111, 150, 182);
     text-decoration: none;
   }
 
