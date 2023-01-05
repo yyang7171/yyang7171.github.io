@@ -75,8 +75,12 @@ html {
   .content {
     flex-direction: column;
   }
-  
-  .text {
+
+  .section_item {
+    flex: auto;
+    margin-bottom: 1rem;
+    padding: 0rem;
+    width: fit-content;
   }
 
   footer {
