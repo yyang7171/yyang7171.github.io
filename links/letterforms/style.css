@@ -76,32 +76,7 @@ html {
     flex-direction: column;
   }
   
-  .left_section {
-    flex: 0 1 auto;
-    margin: 1rem;
-    padding: 1.5rem;
-    border: solid 1px;
-    width: 220px;
-    font-size: smaller;
-  }
-  
-  .right_section {
-    flex: 1 2 auto;
-    margin: 1rem;
-    padding: 1rem;
-    align-items: flex-start;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    border: none;
-  }
-
-  .section_item {
-    flex: auto;
-    margin-bottom: 1rem;
-    padding: .5rem;
-    border: solid 1px;
-    width: fit-content;
+  .text {
   }
 
   footer {
