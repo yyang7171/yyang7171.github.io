@@ -91,3 +91,19 @@ footer {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
+
+/* Media queries for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  #results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #results {
+    grid-template-columns: 1fr;
+  }
+}
