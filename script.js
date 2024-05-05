@@ -1,5 +1,5 @@
-import gsap from "gsap";
-import TextPlugin from "gsap-text-plugin";
+import gsap from 'gsap';
+import TextPlugin from 'gsap-text-plugin';
 
 gsap.registerPlugin(TextPlugin);
 
@@ -13,12 +13,6 @@ async function fetchData(url) {
 // Render the artworks to the page
 function renderArtworks(artworks) {
   const resultsContainer = document.getElementById("results");
-  resultsContainer.innerHTML = "";
-
-  if (artworks.length === 0) {
-    resultsContainer.innerHTML = "<p>No results found.</p>";
-    return;
-  }
 
   artworks.forEach((artwork) => {
     const artworkElement = document.createElement("div");
@@ -28,17 +22,37 @@ function renderArtworks(artworks) {
       ? artwork.artist_title.replace(" from Human_3.0 Reading List", "")
       : "";
 
-    artworkElement.innerHTML = `
-      <h3>${title}</h3>
-      ${artistTitle ? `<p>${artistTitle}</p>` : ""}
-      <img src="${
-        artwork.image_id
-          ? `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`
-          : ""
-      }" alt="${title}" />
-    `;
+    const titleElement = document.createElement("h3");
+    const scrambleAnimation = gsap.fromTo(
+      titleElement,
+      { text: title },
+      {
+        duration: 2,
+        scrambleText: {
+          text: title,
+          chars: "abcdefghijklmnopqrstuvwxyz0123456789",
+          revealDelay: 0.5,
+          speed: 0.3,
+        },
+      }
+    );
+
+    artworkElement.appendChild(titleElement);
+    if (artistTitle) {
+      const artistTitleElement = document.createElement("p");
+      artistTitleElement.textContent = artistTitle;
+      artworkElement.appendChild(artistTitleElement);
+    }
+
+    if (artwork.image_id) {
+      const imageElement = document.createElement("img");
+      imageElement.src = `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`;
+      imageElement.alt = title;
+      artworkElement.appendChild(imageElement);
+    }
 
     resultsContainer.appendChild(artworkElement);
+    scrambleAnimation.play();
   });
 }
 
@@ -53,16 +67,47 @@ function filterArtworks(artworks, searchQuery) {
   return filteredArtworks;
 }
 
+let allArtworks = [];
+let currentIndex = 0;
+const batchSize = 20;
+
+async function fetchAndRenderArtworks() {
+  if (currentIndex >= allArtworks.length) {
+    const newArtworks = await fetchData(
+      `https://api.artic.edu/api/v1/artworks?limit=100&page=${Math.floor(allArtworks.length / 100) + 1}`
+    );
+    allArtworks = [...allArtworks, ...newArtworks];
+  }
+
+  const batchedArtworks = allArtworks.slice(currentIndex, currentIndex + batchSize);
+  const resultsContainer = document.getElementById("results");
+  renderArtworks(batchedArtworks);
+  currentIndex += batchSize;
+}
+
 // Initialize the app
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the current page is artworks.html
   if (window.location.pathname.includes("/artworks.html")) {
-    const artworks = await fetchData(
-      "https://api.artic.edu/api/v1/artworks?limit=100"
+    // Fetch the initial batch of artworks
+    allArtworks = await fetchData("https://api.artic.edu/api/v1/artworks?limit=100");
+    fetchAndRenderArtworks();
+
+    // Set up the Intersection Observer
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            fetchAndRenderArtworks();
+          }
+        });
+      },
+      { rootMargin: "0px 0px 200px 0px" }
     );
 
-    // Render all artworks initially
-    renderArtworks(artworks);
+    // Observe the footer element
+    const footer = document.getElementById("footer");
+    observer.observe(footer);
   }
 
   // Refresh the page when the header link is clicked
@@ -70,27 +115,4 @@ document.addEventListener("DOMContentLoaded", async () => {
     event.preventDefault(); // Prevent the default link behavior
     location.reload(); // Refresh the page
   });
-
-  // Select the title element
-  const titleElement = document.querySelector(".title");
-
-  // Create a ScrambleText animation
-  const animation = gsap.fromTo(
-    titleElement,
-    {
-      text: "Art Institute of Chicago",
-    },
-    {
-      duration: 3,
-      scrambleText: {
-        text: "Explore the Art Institute",
-        chars: "abcdefghijklmnopqrstuvwxyz0123456789",
-        revealDelay: 0.5,
-        speed: 0.3,
-      },
-    }
-  );
-
-  // Trigger the animation on page load
-  animation.play();
 });
