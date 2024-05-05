@@ -1,14 +1,15 @@
+/* General Styles */
 body {
   margin: 0;
   font-family: "Almarai", sans-serif;
 }
 
+/* Header Styles */
 header {
   background-color: #b50938;
   color: white;
   font-family: sans-serif;
-  /* top right bottom left */
-  padding: 1em 0.5rem 0 0.5rem;
+  padding: 1em 0.5rem 0 0.5rem; /* top right bottom left */
 }
 
 .header-link {
@@ -20,9 +21,9 @@ header {
 .header-link:focus,
 .header-link:active {
   color: inherit; /* Prevent color change on hover/focus/active */
-  cursor: pointer;
 }
 
+/* Container Styles */
 .container {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -83,6 +84,7 @@ header {
   height: auto;
 }
 
+/* Footer Styles */
 footer {
   height: 2.5rem;
   padding-top: 2rem;
