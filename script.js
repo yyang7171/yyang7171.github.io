@@ -1,3 +1,8 @@
+import gsap from "gsap";
+import TextPlugin from "gsap-text-plugin";
+
+gsap.registerPlugin(TextPlugin);
+
 // Fetch data from the API
 async function fetchData(url) {
   const response = await fetch(url);
@@ -18,21 +23,20 @@ function renderArtworks(artworks) {
   artworks.forEach((artwork) => {
     const artworkElement = document.createElement("div");
     artworkElement.classList.add("artwork-item");
-    // removes additional text from the title when it is part of the reading list
     let title = artwork.title.replace(" from Human_3.0 Reading List", "");
     let artistTitle = artwork.artist_title
       ? artwork.artist_title.replace(" from Human_3.0 Reading List", "")
       : "";
 
     artworkElement.innerHTML = `
-        <h3>${title}</h3>
-        ${artistTitle ? `<p>${artistTitle}</p>` : ""}
-        <img src="${
-          artwork.image_id
-            ? `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`
-            : ""
-        }" alt="${title}" />
-      `;
+      <h3>${title}</h3>
+      ${artistTitle ? `<p>${artistTitle}</p>` : ""}
+      <img src="${
+        artwork.image_id
+          ? `https://www.artic.edu/iiif/2/${artwork.image_id}/full/843,/0/default.jpg`
+          : ""
+      }" alt="${title}" />
+    `;
 
     resultsContainer.appendChild(artworkElement);
   });
@@ -48,37 +52,6 @@ function filterArtworks(artworks, searchQuery) {
   );
   return filteredArtworks;
 }
-
-const gsap = require("gsap");
-const TextPlugin = require("gsap/TextPlugin");
-
-// Register the TextPlugin
-gsap.registerPlugin(TextPlugin);
-
-// Select the title element
-const titleElement = document.querySelector(".title");
-
-// Create a ScrambleText animation
-const animation = gsap.fromTo(
-  titleElement,
-  {
-    text: "Art Institute of Chicago",
-  },
-  {
-    duration: 3,
-    scrambleText: {
-      text: "Explore the Art Institute",
-      chars: "abcdefghijklmnopqrstuvwxyz0123456789",
-      revealDelay: 0.5,
-      speed: 0.3,
-    },
-  }
-);
-
-// Trigger the animation on page load
-window.addEventListener("load", () => {
-  animation.play();
-});
 
 // Initialize the app
 document.addEventListener("DOMContentLoaded", async () => {
@@ -97,4 +70,27 @@ document.addEventListener("DOMContentLoaded", async () => {
     event.preventDefault(); // Prevent the default link behavior
     location.reload(); // Refresh the page
   });
+
+  // Select the title element
+  const titleElement = document.querySelector(".title");
+
+  // Create a ScrambleText animation
+  const animation = gsap.fromTo(
+    titleElement,
+    {
+      text: "Art Institute of Chicago",
+    },
+    {
+      duration: 3,
+      scrambleText: {
+        text: "Explore the Art Institute",
+        chars: "abcdefghijklmnopqrstuvwxyz0123456789",
+        revealDelay: 0.5,
+        speed: 0.3,
+      },
+    }
+  );
+
+  // Trigger the animation on page load
+  animation.play();
 });
