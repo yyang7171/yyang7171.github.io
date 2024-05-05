@@ -1,74 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>yabing's portfolio site</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" type="image/jpg" href="10315167.png" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fgreek-statues-png-8.png&f=1&nofb=1&ipt=36af25aa226fd933090412c56488706382fad0133a8d2b0de6c65fc010f9f1e5&ipo=images"
+    />
+    <title>art institute of chicago</title>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=DM+Sans"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Almarai"
+    />
   </head>
+
   <body>
-    <div class="wrapper">
-      <header class="header">
-        <h1><a href="/">home</a></h1>
-        <h1><a href="/links/cats/">pictures of cats</a></h1>
-      </header>
-      <div class="container">
-        <div class="left_section">
-          <img
-            src="/killua1.jpeg"
-            alt="killua, a cream-colored cat, sitting on my lap. he is staring at the camera but has no idea what it is."
-            height="200px"
-            width="200px"
-          />
-          <div>
-            Hi, I'm 杨雅冰 (or in English, Yabing Yang). I'm currently a
-            graduate student at the University of Maryland, College Park,
-            pursuing a M.S. in Human-Computer Interaction. I previously
-            graduated with a B.S. in Information Science and B.A. in History.<br />
-          </div>
-          <hr />
-          <div>ヾ(*'▽'*) Thanks for stopping by!</div>
-        </div>
-        <div class="right_section">
-          <h3>Portfolio Items</h3>
-          <div class="section_item">
-            <a href="https://yyang7171.github.io/377-Group-Project/"
-              >INST377 Pair Project: PG County Trash</a
-            ><br />
-            This is a website developed with a partner for INST377: Dynamic Web
-            Applications.<br />
-            Created using HTML, CSS, and Javascript. The GitHub repository for
-            this site is viewable
-            <a href="https://github.com/yyang7171/377-Group-Project">here</a>.
-          </div>
-          <div class="section_item">
-            <a href="links/letterforms/">Custom Letterforms</a><br />
-            This was made in INST408V: Visual Design Studio, as a set of custom
-            letterforms based on organic life (aquatic life). <br />
-            Created using Adobe Illustrator.
-          </div>
-          <div class="section_item">
-            <a href="/links/jetpens/">JetPens Redesign</a><br />
-            This was made in INST408V: Visual Design Studio, as a one-page
-            re-design for an existing website.<br />
-            Created using Figma.
-          </div>
-          <div class="section_item">
-            <a href="/links/parks/">PG Parks Redesign</a><br />
-            This was made in INST408V: Visual Design Studio, as a multi-page
-            re-design for an existing website.<br />
-            Created using Figma and Adobe Illustrator.
-          </div>
+    <header id="header">
+      <a href="#" id="headerLink" class="header-link"
+        ><h1 class="title">Art Institute of Chicago</h1></a
+      >
+    </header>
+    <div class="container">
+      <div id="explainer">
+        <p>
+          Art in the Art Institute of Chicago, using their
+          <a target="_blank" a href="https://api.artic.edu/docs/">API</a>
+          and animated using the
+          <a target="_blank" href="https://gsap.com/">GSAP JS library</a>.
+        </p>
+      </div>
+      <div id="showAll">
+        <a href="/artworks.html"
+          ><button id="showAllButton">Show All Artworks</button></a
+        >
+      </div>
+      <div id="searchContainer">
+        <div id="search">
+          <form class="mainform">
+            <label for="searchbox">search the museum api</label>
+            <input id="searchbox" type="text" />
+            <button type="generate" id="searchQuery">search</button>
+          </form>
         </div>
       </div>
-      <footer class="footer">
-        <div>
-          <a href="https://github.com/yyang7171">my github</a><br />
-          <a href="https://www.linkedin.com/in/yyang116/">my linkedin</a><br />
-        </div>
-      </footer>
+      <div id="results"></div>
     </div>
+    <script src="/script.js" type="module"></script>
+    <footer id="footer">
+      created by <a href="https://www.linkedin.com/in/yyang116/">yabing yang</a>
+    </footer>
   </body>
 </html>
