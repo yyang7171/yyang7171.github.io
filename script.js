@@ -36,17 +36,6 @@ function renderArtworks(artworks) {
   });
 }
 
-// Filter artworks based on user input
-function filterArtworks(artworks, searchQuery) {
-  const filteredArtworks = artworks.filter(
-    (artwork) =>
-      artwork.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (artwork.artist_title &&
-        artwork.artist_title.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
-  return filteredArtworks;
-}
-
 // Initialize the app
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the current page is artworks.html
