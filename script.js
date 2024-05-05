@@ -49,37 +49,37 @@ async function fetchData(url) {
     return filteredArtworks;
   }
   
-  const gsap = require('gsap');
-  const TextPlugin = require('gsap/TextPlugin');
+//   const gsap = require('gsap');
+//   const TextPlugin = require('gsap/TextPlugin');
   
-  // Register the TextPlugin
-  gsap.registerPlugin(TextPlugin);
+//   // Register the TextPlugin
+//   gsap.registerPlugin(TextPlugin);
   
   
-  // Select the title element
-  const titleElement = document.querySelector('.title');
+//   // Select the title element
+//   const titleElement = document.querySelector('.title');
   
-  // Create a ScrambleText animation
-  const animation = gsap.fromTo(
-    titleElement,
-    {
-      text: 'Art Institute of Chicago',
-    },
-    {
-      duration: 3,
-      scrambleText: {
-        text: 'Explore the Art Institute',
-        chars: 'abcdefghijklmnopqrstuvwxyz0123456789',
-        revealDelay: 0.5,
-        speed: 0.3,
-      },
-    }
-  );
+//   // Create a ScrambleText animation
+//   const animation = gsap.fromTo(
+//     titleElement,
+//     {
+//       text: 'Art Institute of Chicago',
+//     },
+//     {
+//       duration: 3,
+//       scrambleText: {
+//         text: 'Explore the Art Institute',
+//         chars: 'abcdefghijklmnopqrstuvwxyz0123456789',
+//         revealDelay: 0.5,
+//         speed: 0.3,
+//       },
+//     }
+//   );
   
-  // Trigger the animation on page load
-  window.addEventListener('load', () => {
-    animation.play();
-  });
+//   // Trigger the animation on page load
+//   window.addEventListener('load', () => {
+//     animation.play();
+//   });
   
   
   // Initialize the app
