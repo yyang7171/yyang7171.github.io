@@ -1,7 +1,7 @@
 /* General Styles */
 body {
   margin: 0;
-  font-family: "Almarai", sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 /* Header Styles */
@@ -14,13 +14,13 @@ header {
 
 .header-link {
   text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit the color from the parent element */
+  color: inherit; /* Inherit color from parent element */
 }
 
 .header-link:hover,
 .header-link:focus,
 .header-link:active {
-  color: inherit; /* Prevent color change on hover/focus/active */
+  color: inherit; /* Prevent color change */
 }
 
 /* Container Styles */
@@ -61,10 +61,6 @@ header {
   background-color: #eeeeee;
   cursor: pointer;
   border-radius: 10px;
-}
-
-#submit {
-  width: min-content;
 }
 
 #results {
