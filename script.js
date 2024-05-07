@@ -44,6 +44,68 @@ function renderArtworks(artworks) {
   });
 }
 
+async function fetchDataForChart() {
+  const artworks = await fetchData('https://api.artic.edu/api/v1/artworks?limit=100');
+
+  // Create an object to store the artist counts
+  const artistCounts = {};
+
+  // Iterate through the artworks and count the occurrences of each artist
+  artworks.forEach(artwork => {
+    const artist = artwork.artist_title;
+    if (artistCounts[artist]) {
+      artistCounts[artist]++;
+    } else {
+      artistCounts[artist] = 1;
+    }
+  });
+
+  // Convert the object into an array of label-data pairs
+  const chartData = Object.entries(artistCounts).map(([label, data]) => ({ label, data }));
+
+  return chartData;
+}
+
+function renderChart(chartData) {
+  const ctx = document.getElementById('myChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: chartData.map(item => item.label),
+      datasets: [
+        {
+          label: 'Number of Artworks',
+          data: chartData.map(item => item.data),
+          backgroundColor: 'rgba(185, 31, 72, 0.6)', // Change the bar color
+          borderColor: 'rgba(185, 31, 72, 1)', // Change the border color
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        legend: {
+          display: false // Hide the legend
+        },
+        title: {
+          display: true,
+          text: 'Artworks by Artist', // Add a title
+          font: {
+            size: 18 // Adjust the font size
+          }
+        }
+      }
+    }
+  });
+}
+
 // Initialize the app
 document.addEventListener("DOMContentLoaded", async () => {
   // Check if the current page is artworks.html, then fetching from API
@@ -55,6 +117,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Render all artworks initially
     renderArtworks(artworks);
   }
+    // Fetch data for chart
+    const chartData = await fetchDataForChart();
+
+    // Render the chart
+    renderChart(chartData);
 
   // Refresh the page when the header link is clicked
   document.getElementById("headerLink").addEventListener("click", (event) => {

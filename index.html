@@ -7,67 +7,72 @@
       rel="icon"
       href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fgreek-statues-png-8.png&f=1&nofb=1&ipt=36af25aa226fd933090412c56488706382fad0133a8d2b0de6c65fc010f9f1e5&ipo=images"
     />
-    <title>art institute of chicago</title>
+    <title>Art Institute of Chicago</title>
     <link rel="stylesheet" href="/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=DM+Sans"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <header id="header">
-      <h1 class="title">
-        <a href="#" id="headerLink" class="header-link"
-          >Art Institute of Chicago</a
-        >
-      </h1>
-    </header>
-    <div class="container">
-      <div id="explainer">
-        <p>
-          Art in the Art Institute of Chicago, using their
-          <a target="_blank" href="https://api.artic.edu/docs/">API</a>
-          and animated using the
-          <a target="_blank" href="https://gsap.com/">GSAP JS library</a>.
-        </p>
-      </div>
-      <div id="showAll">
-        <a href="/artworks.html"
-          ><button id="showAllButton">Show All Artworks</button></a
-        >
-      </div>
-      <div id="searchContainer">
-        <div id="search">
-          <form class="mainform">
-            <label for="searchbox">search the museum api</label>
-            <input id="searchbox" type="text" />
-            <button type="generate" id="searchQuery">search</button>
-          </form>
+    <div class="main-container">
+      <header id="header">
+        <h1 class="title">
+          <a href="#" id="headerLink" class="header-link"
+            >Art Institute of Chicago</a
+          >
+        </h1>
+      </header>
+      <div class="container">
+        <div id="explainer">
+          <p>
+            Art in the Art Institute of Chicago, using their
+            <a target="_blank" href="https://api.artic.edu/docs/">API</a>,
+            charted using <a href="https://www.chartjs.org/">Chart.js</a>, and
+            the header text animated using
+            <a target="_blank" href="https://gsap.com/">GSAP</a>.
+          </p>
         </div>
+        <div id="showAll">
+          <a href="/artworks.html"
+            ><button id="showAllButton">Show All Artworks</button></a
+          >
+        </div>
+        <div id="searchContainer">
+          <div id="search">
+            <form class="mainform">
+              <label for="searchbox">search the museum api</label>
+              <input id="searchbox" type="text" />
+              <button type="generate" id="searchQuery">search</button>
+            </form>
+          </div>
+        </div>
+        <div id="results"></div>
       </div>
-      <div id="results"></div>
-    </div>
-    <footer id="footer">
-      created by <a href="https://www.linkedin.com/in/yyang116/">yabing yang</a>
-    </footer>
-    <script src="https://unpkg.com/split-type"></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="/script.js" type="module"></script>
-    <script>
-      // Select the header title element
-      const headerTitleElement = document.querySelector(".title a");
+      <footer id="footer">
+        Created by
+        <a href="https://www.linkedin.com/in/yyang116/">Yabing Yang</a>
+      </footer>
+      <script src="https://unpkg.com/split-type"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script>
+        // Select the header title element
+        const headerTitleElement = document.querySelector(".title a");
 
-      // Create an animation for the header title
-      const headerAnimation = gsap.fromTo(
-        headerTitleElement,
-        { x: -100, opacity: 0 },
-        { duration: 3, x: 0, opacity: 1, ease: "power2" }
-      );
-    </script>
+        // Create an animation for the header title
+        const headerAnimation = gsap.fromTo(
+          headerTitleElement,
+          { x: -100, opacity: 0 },
+          { duration: 3, x: 0, opacity: 1, ease: "power2" }
+        );
+      </script>
+      <script src="/script.js"></script>
+    </div>
   </body>
 </html>

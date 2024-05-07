@@ -7,25 +7,42 @@
       rel="icon"
       href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fgreek-statues-png-8.png&f=1&nofb=1&ipt=36af25aa226fd933090412c56488706382fad0133a8d2b0de6c65fc010f9f1e5&ipo=images"
     />
-    <title>art institute of chicago</title>
+    <title>Art Institute of Chicago</title>
     <link rel="stylesheet" href="/style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=DM+Sans"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <header id="header">
-      <a href="index.html" class="header-link">
-        <h1 class="title">Art Institute of Chicago</h1>
-      </a>
-    </header>
-    <div class="container">
-      <div id="results"></div>
+    <div class="main-container">
+      <header id="header">
+        <a href="index.html" class="header-link">
+          <h1 class="title">Art Institute of Chicago</h1>
+        </a>
+      </header>
+      <div class="container">
+        <div id="chart-container">
+          <div id="summary-text">
+            <h1>Understanding the Artworks</h1>
+            <p>
+              This site pulls data from the Art Institute of Chicago's API,
+              which contains data about the artworks within their collection.
+              The chart below summarizes the total amount of artworks per artist
+              for the works displayed below. Due to limitations of the API, only
+              100 works can be retrived.
+            </p>
+          </div>
+          <canvas id="myChart"></canvas>
+        </div>
+        <div id="results"></div>
+      </div>
+      <footer id="footer">
+        Created by
+        <a href="https://www.linkedin.com/in/yyang116/">Yabing Yang</a>
+      </footer>
+      <script src="/script.js"></script>
     </div>
-    <footer id="footer">
-      created by <a href="https://www.linkedin.com/in/yyang116/">yabing yang</a>
-    </footer>
-    <script src="/script.js" type="module"></script>
   </body>
 </html>
