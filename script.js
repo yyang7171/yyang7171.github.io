@@ -68,6 +68,8 @@ async function fetchDataForChart() {
 
 function renderChart(chartData) {
   const ctx = document.getElementById('myChart').getContext('2d');
+
+  // Creating the chart of artworks by artist
   new Chart(ctx, {
     type: 'bar',
     data: {
@@ -76,13 +78,14 @@ function renderChart(chartData) {
         {
           label: 'Number of Artworks',
           data: chartData.map(item => item.data),
-          backgroundColor: 'rgba(185, 31, 72, 0.6)', // Change the bar color
-          borderColor: 'rgba(185, 31, 72, 1)', // Change the border color
+          backgroundColor: 'rgba(185, 31, 72, 0.6)',
+          borderColor: 'rgba(185, 31, 72, 1)',
           borderWidth: 1
         }
       ]
     },
     options: {
+      // Adjusts sizing issues
       responsive: true,
       maintainAspectRatio: false,
       scales: {
