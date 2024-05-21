@@ -60,6 +60,7 @@ document.addEventListener("mousemove", updateCursorPositions);
 let animationInterval;
 
 function animate() {
+  ctx.imageSmoothingEnabled = true;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.lineJoin = 'round';
   ctx.lineWidth = 20;
