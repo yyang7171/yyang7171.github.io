@@ -122,6 +122,38 @@ canvas#cursor-canvas {
   background-color: #555;
 }
 
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e6e6e6;
+  color: #333;
+  padding: 4px 8px;
+  margin: 2px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+  background-color: #ccc;
+}
+
+.tag-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.separator {
+  margin: 0 8px;
+  color: #999;
+}
+
 /* About page styling */
 
 .about-content {
