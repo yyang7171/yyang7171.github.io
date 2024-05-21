@@ -144,3 +144,74 @@ canvas#cursor-canvas {
   margin-bottom: 20px;
   text-align: justify;
 }
+
+/* Styles for the Portfolio page */
+
+.portfolio {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.portfolio h1 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 36px;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+.portfolio-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.portfolio-item h2 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.portfolio-item p {
+  font-family: "DM Sans", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.view-project {
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.view-project:hover {
+  background-color: #555;
+}
