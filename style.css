@@ -55,6 +55,13 @@ nav a:hover {
   margin: 0 auto;
 }
 
+canvas#cursor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure the canvas is behind other content */
+}
+
 .cursor {
   animation: blink 0.8s infinite;
 }
@@ -70,6 +77,8 @@ nav a:hover {
     opacity: 1;
   }
 }
+
+/* Portfolio highlight styling*/
 
 .portfolio-highlights {
   max-width: 800px;
@@ -111,4 +120,27 @@ nav a:hover {
 
 .view-project:hover {
   background-color: #555;
+}
+
+/* About page styling */
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.about-content h1 {
+  font-size: 36px;
+  color: #e8716a;
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.about-content p {
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: justify;
 }
