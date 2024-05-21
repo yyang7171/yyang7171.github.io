@@ -1,7 +1,7 @@
 // Typing Effect Code
 const typedTextElement = document.getElementById("typed-text");
 const cursor = document.querySelector(".cursor");
-const text = "Hi! I'm Yabing: apsiring UI/UX designer.";
+const text = "杨雅冰. Yabing Yang.";
 const typingSpeed = 50;
 
 let textIndex = 0;

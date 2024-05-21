@@ -1,78 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="icon"
-      href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fclipground.com%2Fimages%2Fgreek-statues-png-8.png&f=1&nofb=1&ipt=36af25aa226fd933090412c56488706382fad0133a8d2b0de6c65fc010f9f1e5&ipo=images"
-    />
-    <title>Art Institute of Chicago</title>
-    <link rel="stylesheet" href="/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=DM+Sans"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main-container">
-      <header id="header">
-        <h1 class="title">
-          <a href="#" id="headerLink" class="header-link"
-            >Art Institute of Chicago</a
-          >
-        </h1>
-      </header>
-      <div class="container">
-        <div id="explainer">
-          <p>
-            Art in the Art Institute of Chicago, using their
-            <a target="_blank" href="https://api.artic.edu/docs/">API</a>,
-            charted using <a href="https://www.chartjs.org/">Chart.js</a>, and
-            the header text animated using
-            <a target="_blank" href="https://gsap.com/">GSAP</a>.
-          </p>
-        </div>
-        <div id="showAll">
-          <a href="/artworks.html"
-            ><button id="showAllButton">Show All Artworks</button></a
-          >
-        </div>
-        <div id="searchContainer">
-          <div id="search">
-            <form class="mainform">
-              <label for="searchbox">search the museum api</label>
-              <input id="searchbox" type="text" />
-              <button type="generate" id="searchQuery">search</button>
-            </form>
-          </div>
-        </div>
-        <div id="results"></div>
-      </div>
-      <footer id="footer">
-        Created by
-        <a href="https://www.linkedin.com/in/yyang116/">Yabing Yang</a>
-      </footer>
-      <script src="https://unpkg.com/split-type"></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-      ></script>
-      <script>
-        // Select the header title element
-        const headerTitleElement = document.querySelector(".title a");
-
-        // Create an animation for the header title
-        const headerAnimation = gsap.fromTo(
-          headerTitleElement,
-          { x: -100, opacity: 0 },
-          { duration: 3, x: 0, opacity: 1, ease: "power2" }
-        );
-      </script>
-      <script src="/script.js"></script>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="typing-text">
+      <span id="typed-text"></span>
+      <span class="cursor">|</span>
     </div>
+    <section class="portfolio-highlights">
+      <h2>Portfolio Highlights</h2>
+      <div class="journal-entries">
+        <div class="journal-entry">
+          <h3>Art Institute of Chicago API</h3>
+          <p>
+            This website displays artworks from the Art Institute of Chicago's
+            API.
+            <br />
+            <b>Project type:</b> Solo<br />
+            <b>Tools used:</b> HTML, CSS, JavaScript, Git, VSCode, Charts.js,
+            GSAP<br />
+            <b>Timeline:</b> April - May 2024
+          </p>
+          <a href="/chicagoartinstitute/" class="view-project">View Project</a>
+        </div>
+        <div class="journal-entry">
+          <h3>XG Website Redesign</h3>
+          <p>
+            Pop girl group XG's official website, reimagined using their visual
+            aesthetics.
+            <br />
+            <b>Project type:</b> Solo<br />
+            <b>Tools used:</b> Figma, Adobe Photoshop<br />
+            <b>Timeline:</b> Feburary - March 2024
+          </p>
+          <a href="/xg/" class="view-project">View Project</a>
+        </div>
+        <div class="journal-entry">
+          <h3>Nightshade Design System</h3>
+          <p>
+            A design system for Nightshade, a protective tool for artists, based
+            on the concept of poison.
+            <br />
+            <b>Project type:</b> Solo<br />
+            <b>Tools used:</b> Figma<br />
+            <b>Timeline:</b> April - May 2024
+          </p>
+          <a href="/nightshade/" class="view-project">View Project</a>
+        </div>
+      </div>
+    </section>
+    <canvas id="cursor-canvas"></canvas>
+    <script src="script.js"></script>
   </body>
 </html>
