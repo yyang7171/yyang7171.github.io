@@ -1,249 +1,136 @@
-/* Import a creative font from Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+html {
+  background-color: #ffffff;
+  font-size: 16px;
+  min-width: 300px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
 
 body {
-  font-family: "DM Sans", sans-serif;
-  color: #333;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-p {
-  line-height: 1.6;
-}
-
-header {
-  background-color: inherit;
-  color: #333; /* Change the text color to a darker shade */
-  padding: 20px;
-}
-
-nav ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color:rgb(10, 34, 60);
 }
 
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #333; /* Change the color to a darker shade */
-  text-decoration: none;
-  transition: transform 0.3s ease;
-}
-
-nav a:hover {
-  transform: scale(1.2);
-}
-
-.typing-text {
-  font-size: 24px;
-  font-family: "IBM Plex Mono", monospace;
-  white-space: pre-wrap;
-  max-width: 80%;
-  margin: 0 auto;
-}
-
-canvas#cursor-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1; /* Ensure the canvas is behind other content */
-}
-
-.cursor {
-  animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* Portfolio highlight styling*/
-
-.portfolio-highlights {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.journal-entries {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 40px;
-}
-
-.journal-entry {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.journal-entry h3 {
-  margin-top: 0;
-}
-
-.journal-entry p {
-  margin-bottom: 20px;
-}
-
-.view-project {
+a {
   display: inline-block;
-  background-color: #333;
-  color: #fff;
   text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
 }
 
-.view-project:hover {
-  background-color: #555;
+a:link {
+  color: #b3180d;
+  font-weight: bolder;
 }
 
-.tags {
+a:visited {
+  color: #8f5e5e;
+}
+
+h2, h3 {
+  margin:0;
+  padding:0;
+  padding-bottom:1.5rem;
+}
+
+
+.wrapper {
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  margin: 0;
+  flex: 1;
 }
 
-.tag {
-  display: inline-block;
-  background-color: #e6e6e6;
-  color: #333;
-  padding: 4px 8px;
-  margin: 2px;
-  border-radius: 12px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.tag:hover {
-  background-color: #ccc;
-}
-
-.tag-group {
+.container {
+  margin: 0 20px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: start;
+  flex:1;
 }
 
-.separator {
-  margin: 0 8px;
-  color: #999;
+.header {
+  padding-top: 0rem;
+  padding-left: 0rem;
+  padding-right: 0rem;
 }
 
-/* About page styling */
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.about-content h1 {
-  font-size: 36px;
-  color: #e8716a;
-  margin-top: 0;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-.about-content p {
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 20px;
-  text-align: justify;
-}
-
-/* Styles for the Portfolio page */
-
-.portfolio {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-.portfolio h1 {
-  font-family: "DM Sans", sans-serif;
-  font-size: 36px;
-  color: #333;
-  margin-top: 0;
-  margin-bottom: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 40px;
-}
-
-.portfolio-item {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.portfolio-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.portfolio-item h2 {
-  font-family: "DM Sans", sans-serif;
-  font-size: 24px;
-  color: #333;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.portfolio-item p {
-  font-family: "DM Sans", sans-serif;
-  color: #333;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.view-project {
+.header h1 {
   display: inline-block;
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 0px;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin:0;
 }
 
-.view-project:hover {
-  background-color: #555;
+.left_section {
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 220px;
+  font-size: smaller;
+  background-color: #d7e2f1;
+}
+
+.right_section {
+  flex: 1 2 auto;
+  margin: 1rem;
+  padding: 1rem;
+  align-items: flex-start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.section_item {
+  flex: auto;
+  margin-bottom: 1rem;
+  padding: .5rem;
+  width: fit-content;
+}
+
+footer {
+  flex-shrink: 0;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.footer a {
+  color: rgb(145, 78, 62);
+  text-decoration: underline;
+  font-size: small;
+}
+
+.footer a:hover {
+  color: rgb(111, 150, 182);
+  text-decoration: none;
+}
+
+
+@media only screen and (max-width: 736px){
+    .container {
+      background-color: #ffffff;
+      margin: 0px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .left_section {
+      background-color: #ffffff;
+      margin: 0;
+    }
+    .right_section {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
 }
